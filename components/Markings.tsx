@@ -3,16 +3,19 @@
 import React from "react";
 import { G, Line, Text } from "react-native-svg";
 import { polarToCartesian } from "../helpers/geometry";
+import Svg, { Circle } from "react-native-svg";
 
 type Props = {
   radius: number;
   center: number;
   minutes: number;
   hours: number;
+  width: number;
+  height: number;
 };
 
 const Markings = (props: Props) => {
-  const { radius, center, minutes, hours } = props;
+  const { radius, center, minutes, hours, width, height } = props;
   const minutesArray = new Array(minutes).fill(1);
   const hoursArray = new Array(hours).fill(1);
 
@@ -20,16 +23,30 @@ const Markings = (props: Props) => {
     const start = polarToCartesian(center, center, radius, index * 5);
     const end = polarToCartesian(center, center, radius, index * 5);
     return (
-      <Line
-        stroke='black'
-        strokeWidth={2}
-        strokeLinecap='round'
-        key={index}
-        x1={start.x}
-        x2={end.x}
-        y1={start.y}
-        y2={end.y}
+      <Circle
+          cx={width/2}
+          cy={height/2}
+          r={width/2.3}
+          stroke="lightgray"
+          fill="transparent"
+          strokeWidth="30"
+          // strokeDasharray={50}
+          // strokeDashoffset={0}
+          rotation={0}
+          originX={width/2}
+          originY={height/2}
+          strokeLinecap="butt"
       />
+      // <Line
+      //   stroke='black'
+      //   strokeWidth={2}
+      //   strokeLinecap='round'
+      //   key={index}
+      //   x1={start.x}
+      //   x2={end.x}
+      //   y1={start.y}
+      //   y2={end.y}
+      // />
     );
   });
 
@@ -40,7 +57,7 @@ const Markings = (props: Props) => {
 
     return (
       <G key={index}>
-        <Line
+        {/* <Line
           stroke='black'
           strokeWidth={3}
           strokeLinecap='round'
@@ -48,7 +65,7 @@ const Markings = (props: Props) => {
           x2={end.x}
           y1={start.y}
           y2={end.y}
-        />
+        /> */}
         <Text
           textAnchor='middle'
           fontSize='17'

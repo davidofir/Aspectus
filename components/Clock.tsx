@@ -8,6 +8,7 @@ import Hand from "./Hand";
 import { useInterval } from "../helpers/useInterval";
 import { getTime } from "../helpers/time";
 import Events from "./Events";
+import Face from "./Face";
 
 const { width } = Dimensions.get("window");
 const diameter = width - 40;
@@ -25,7 +26,7 @@ const Clock = () => {
 
   return (
     <Svg height={width} width={width}>
-      <Events
+      <Face
         minutes={minuteStickCount}
         hours={hourStickCount}
         radius={radius}
@@ -39,13 +40,15 @@ const Clock = () => {
         hours={hourStickCount}
         radius={radius}
         center={center}
+        width={width}
+        height={width}
       />
       <Hand
         angle={time.seconds}
         center={center}
         radius={radius}
         stroke='red'
-        strokeWidth='1'
+        strokeWidth={1}
       />
       <Hand
         angle={time.minutes}
@@ -78,6 +81,14 @@ const Clock = () => {
           cy={width/2}
           r={width/80}
           fill={"black"}
+      />
+      <Events
+        minutes={minuteStickCount}
+        hours={hourStickCount}
+        radius={radius}
+        center={center}
+        width={width}
+        height={width}
       />
     </Svg>
   );
