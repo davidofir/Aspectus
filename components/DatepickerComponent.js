@@ -22,7 +22,7 @@ export default function DatepickerComponent(props) {
         showMode('time');
     };
     return (
-        <View>
+        <View style={{ margin: 8 }}>
             <View style={styles.container}>
                 <Text>{props.date.toLocaleString()}</Text>
             </View>
@@ -37,6 +37,8 @@ export default function DatepickerComponent(props) {
                         testID="dateTimePicker"
                         value={props.date}
                         mode={mode}
+                        minimumDate={props.minDate}
+                        maximumDate={props.maxDate}
                         display="default"
                         onChange={onChange}
                     />
