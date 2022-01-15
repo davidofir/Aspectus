@@ -5,12 +5,37 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Homescreen from './screens/Homescreen';
+import AddEvent from './screens/AddEvent';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Icon } from 'react-native-elements/dist/icons/Icon';
+import Settings from './screens/Settings';
 const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Home'>
-        <Stack.Screen name="Home" component={Homescreen} />
+        <Stack.Screen name="Home" component={Homescreen} options={({ route, navigation }) => ({
+          headerRight: () => (
+            <TouchableOpacity style={{ marginRight: 8 }} onPress={() => {
+              navigation.navigate("AddEvent")
+            }} >
+              <Icon name='add' type='material' />
+            </TouchableOpacity>
+          )
+          , headerLeft: () => (
+            <TouchableOpacity style={{ marginLeft: 8 }} onPress={() => {
+              navigation.navigate("Settings")
+            }} >
+              <Text>Settings</Text>
+            </TouchableOpacity>
+          )
+        })
+
+        }
+        />
+
+        <Stack.Screen name="AddEvent" component={AddEvent} />
+        <Stack.Screen name="Settings" component={Settings} />
       </Stack.Navigator>
     </NavigationContainer>
 
