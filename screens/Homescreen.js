@@ -4,10 +4,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { PieChart, LineChart } from 'react-native-chart-kit';
 import { useWindowDimensions } from 'react-native';
+import { Card } from 'react-native-elements';
 
 const Homescreen = ({ navigation }) => {
     const windowWidth = useWindowDimensions().width;
     const windowHeight = useWindowDimensions().height;
+    const maxElementWidth = windowWidth / 1.2;
 
     let data = [];
 
@@ -16,32 +18,36 @@ const Homescreen = ({ navigation }) => {
     }
     return (
         <View style={styles.container}>
-              
-            <PieChart
-                data={data}
-                width={windowWidth}
-                height={220}
-                chartConfig={{
-                    backgroundColor: 'transparent',
-                    // backgroundGradientFrom: '#fb8c00',
-                    // backgroundGradientTo: '#ffa726',
-                    // decimalPlaces: 2, // optional, defaults to 2dp
-                    color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-                    style: {
-                        borderRadius: 16
-                    }
-                    }}
-                accessor="hours"
-                backgroundColor="transparent"
-                paddingLeft="15"
-            />
-            <Text style={styles.label}>Today</Text>
-            <TouchableOpacity onPress={() => alert('Hello, world!')} style={styles.eventButton}>
-                <Text style={styles.eventText}>Intro to Java from 09:00 to 11:00</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => alert('Hello, world!')} style={styles.eventButton}>
-                <Text style={styles.eventText}>Linux Development from 09:00 to 11:00</Text>
-            </TouchableOpacity>
+            <Card>
+                <PieChart
+                    data={data}
+                    width={maxElementWidth}
+                    height={220}
+                    chartConfig={{
+                        backgroundColor: 'transparent',
+                        // backgroundGradientFrom: '#fb8c00',
+                        // backgroundGradientTo: '#ffa726',
+                        // decimalPlaces: 2, // optional, defaults to 2dp
+                        color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+                        style: {
+                            borderRadius: 16
+                        }
+                        }}
+                    accessor="hours"
+                    backgroundColor="transparent"
+                    paddingLeft="15"
+                />
+            </Card>
+
+            <Card>
+                <Text style={styles.label}>Today</Text>
+                <TouchableOpacity onPress={() => alert('Hello, world!')} style={styles.eventButton}>
+                    <Text style={styles.eventText}>Intro to Java from 09:00 to 11:00</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => alert('Hello, world!')} style={styles.eventButton}>
+                    <Text style={styles.eventText}>Linux Development from 09:00 to 11:00</Text>
+                </TouchableOpacity>
+            </Card>
         </View>
     )
 }
