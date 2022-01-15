@@ -12,13 +12,38 @@ import { PieChart, LineChart } from 'react-native-chart-kit';
 //     { name: 'Moscow', population: 11920000, color: 'rgb(0, 0, 255)', legendFontColor: '#7F7F7F', legendFontSize: 15 }
 //   ]
 
-const data = [
-    { name: 'Seoul', population: 21500000, color: 'rgba(131, 167, 234, 1)', legendFontColor: '#7F7F7F', legendFontSize: 15 },
-    { name: 'Toronto', population: 2800000, color: '#F00', legendFontColor: '#7F7F7F', legendFontSize: 15 },
-    { name: 'Beijing', population: 527612, color: 'red', legendFontColor: '#7F7F7F', legendFontSize: 15 },
-    { name: 'New York', population: 8538000, color: '#ffffff', legendFontColor: '#7F7F7F', legendFontSize: 15 },
-    { name: 'Moscow', population: 11920000, color: 'rgb(0, 0, 255)', legendFontColor: '#7F7F7F', legendFontSize: 15 }
-  ]
+let data = [];
+
+for(let i=0; i<24; i++) {
+    data.push({ name: i, hours: 1, color: `rgb(0, ${i*10}, 255)`, legendFontColor: '#7F7F7F', legendFontSize: 15 })
+}
+
+// const data = [
+//     { name: '01', hours: 1, color: 'rgb(0, 20, 255)', legendFontColor: '#7F7F7F', legendFontSize: 15 },
+//     { name: '02', hours: 1, color: 'rgb(0, 40, 255)', legendFontColor: '#7F7F7F', legendFontSize: 15 },
+//     { name: '03', hours: 1, color: 'rgb(0, 60, 255)', legendFontColor: '#7F7F7F', legendFontSize: 15 },
+//     { name: '04', hours: 1, color: 'rgb(0, 80, 255)', legendFontColor: '#7F7F7F', legendFontSize: 15 },
+//     { name: '05', hours: 1, color: 'rgb(0, 100, 255)', legendFontColor: '#7F7F7F', legendFontSize: 15 },
+//     { name: '06', hours: 1, color: 'rgb(0, 120, 255)', legendFontColor: '#7F7F7F', legendFontSize: 15 },
+//     { name: '07', hours: 1, color: 'rgb(0, 0, 255)', legendFontColor: '#7F7F7F', legendFontSize: 15 },
+//     { name: '08', hours: 1, color: 'rgb(0, 0, 255)', legendFontColor: '#7F7F7F', legendFontSize: 15 },
+//     { name: '09', hours: 1, color: 'rgb(0, 0, 255)', legendFontColor: '#7F7F7F', legendFontSize: 15 },
+//     { name: '10', hours: 1, color: 'rgb(0, 0, 255)', legendFontColor: '#7F7F7F', legendFontSize: 15 },
+//     { name: '11', hours: 1, color: 'rgb(0, 0, 255)', legendFontColor: '#7F7F7F', legendFontSize: 15 },
+//     { name: '12', hours: 1, color: 'rgb(0, 0, 255)', legendFontColor: '#7F7F7F', legendFontSize: 15 },
+//     { name: '13', hours: 1, color: 'rgb(0, 0, 255)', legendFontColor: '#7F7F7F', legendFontSize: 15 },
+//     { name: '14', hours: 1, color: 'rgb(0, 0, 255)', legendFontColor: '#7F7F7F', legendFontSize: 15 },
+//     { name: '15', hours: 1, color: 'rgb(0, 0, 255)', legendFontColor: '#7F7F7F', legendFontSize: 15 },
+//     { name: '16', hours: 1, color: 'rgb(0, 0, 255)', legendFontColor: '#7F7F7F', legendFontSize: 15 },
+//     { name: '17', hours: 1, color: 'rgb(0, 0, 255)', legendFontColor: '#7F7F7F', legendFontSize: 15 },
+//     { name: '18', hours: 1, color: 'rgb(0, 0, 255)', legendFontColor: '#7F7F7F', legendFontSize: 15 },
+//     { name: '19', hours: 1, color: 'rgb(0, 0, 255)', legendFontColor: '#7F7F7F', legendFontSize: 15 },
+//     { name: '20', hours: 1, color: 'rgb(0, 0, 255)', legendFontColor: '#7F7F7F', legendFontSize: 15 },
+//     { name: '21', hours: 1, color: 'rgb(0, 0, 255)', legendFontColor: '#7F7F7F', legendFontSize: 15 },
+//     { name: '22', hours: 1, color: 'rgb(0, 0, 255)', legendFontColor: '#7F7F7F', legendFontSize: 15 },
+//     { name: '23', hours: 1, color: 'rgb(0, 0, 255)', legendFontColor: '#7F7F7F', legendFontSize: 15 },
+//     { name: '24', hours: 1, color: 'rgb(0, 0, 255)', legendFontColor: '#7F7F7F', legendFontSize: 15 },
+//   ]
 
 const Homescreen = ({ navigation }) => {
     return (
@@ -71,7 +96,7 @@ const Homescreen = ({ navigation }) => {
                         borderRadius: 16
                     }
                     }}
-                accessor="population"
+                accessor="hours"
                 backgroundColor="transparent"
                 paddingLeft="15"
             />
