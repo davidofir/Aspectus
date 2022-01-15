@@ -34,9 +34,9 @@ const Markings = (props: Props) => {
   });
 
   const hourSticks = hoursArray.map((hour, index) => {
-    const start = polarToCartesian(center, center, radius - 10, index * 30);
-    const end = polarToCartesian(center, center, radius, index * 30);
-    const time = polarToCartesian(center, center, radius - 35, index * 30);
+    const start = polarToCartesian(center, center, radius - 10, index * 15);
+    const end = polarToCartesian(center, center, radius, index * 15);
+    const time = polarToCartesian(center, center, radius - 35, index * 15);
 
     return (
       <G key={index}>
