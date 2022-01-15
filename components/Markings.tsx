@@ -26,7 +26,7 @@ const Markings = (props: Props) => {
       <Circle
           cx={width/2}
           cy={height/2}
-          r={width/2.3}
+          r={radius}
           stroke="lightgray"
           fill="transparent"
           strokeWidth="30"

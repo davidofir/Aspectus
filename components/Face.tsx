@@ -21,14 +21,14 @@ const Face = (props: Props) => {
             <Circle
                 cx={width/2}
                 cy={height/2}
-                r={width/3.1}
-                fill={"#5e1158"}
+                r={radius/1.4}
+                fill={"#3F0536"}
             />
 
             <Circle
                 cx={width/2}
                 cy={height/2}
-                r={width/2.9}
+                r={radius/1.2}
                 stroke="#ffb400"
                 fill="transparent"
                 strokeWidth="50"

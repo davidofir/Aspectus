@@ -19,20 +19,71 @@ const Events = (props: Props) => {
     return (
         <G>
             {/* This part for events */}
-            <Circle
+            {/* <Circle
                 cx={width/2}
                 cy={height/2}
                 r={width/2.3}
                 stroke="#222831"
                 fill="transparent"
                 strokeWidth="30"
-                strokeDasharray={50}
+                strokeDasharray={530}
                 strokeDashoffset={0}
                 rotation={0}
                 originX={width/2}
                 originY={height/2}
                 strokeLinecap="butt"
+            /> */}
+
+            {/* Sleep */}
+            <Circle
+                cx={width/2}
+                cy={height/2}
+                r={radius}
+                stroke="#3F0536"
+                fill="transparent"
+                strokeWidth="30"
+                strokeDasharray={radius*2*Math.PI}
+                strokeDashoffset={700}
+                rotation={245}
+                originX={width/2}
+                originY={height/2}
+                strokeLinecap="butt"
             />
+
+            {/* Anti-sleep (cover up the hack) */}
+            {/* <Circle
+                cx={width/2}
+                cy={height/2}
+                r={radius}
+                stroke="lightgray"
+                fill="transparent"
+                strokeWidth="30"
+                strokeDasharray={500}
+                strokeDashoffset={0}
+                rotation={30}
+                originX={width/2}
+                originY={height/2}
+                strokeLinecap="butt"
+            /> */}
+
+            {/* Event */}
+            <Circle
+                cx={width/2}
+                cy={height/2}
+                r={radius}
+                stroke="green"
+                fill="transparent"
+                strokeWidth="30"
+                strokeDasharray={radius*2*Math.PI}
+                strokeDashoffset={1000}
+                rotation={59}
+                originX={width/2}
+                originY={height/2}
+                strokeLinecap="butt"
+                
+            />
+
+
         </G>
     );
 };
