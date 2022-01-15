@@ -6,6 +6,7 @@ import { PieChart, LineChart } from 'react-native-chart-kit';
 import { useWindowDimensions } from 'react-native';
 import { Card } from 'react-native-elements';
 import CalendarClass from '../utils/CalendarClass';
+import Clock from '../components/Clock';
 
 const Homescreen = ({ navigation }) => {
     const windowWidth = useWindowDimensions().width;
@@ -19,7 +20,9 @@ const Homescreen = ({ navigation }) => {
     }
     return (
         <View style={styles.container}>
-            <PieChart
+            
+            <Clock/>
+            {/* <PieChart
                 data={data}
                 width={maxElementWidth}
                 height={300}
@@ -36,10 +39,7 @@ const Homescreen = ({ navigation }) => {
                 absolute={true}
                 hasLegend={false}
                 center={[50,0,0]}
-            />
-
-            //to be removed:
-            <Button></Button>
+            /> */}
             
             <Card>
                 <Text style={styles.label}>Today</Text>
