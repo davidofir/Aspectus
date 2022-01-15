@@ -12,7 +12,7 @@ type Props = {
   height: number;
 };
 
-const Events = (props: Props) => {
+const Face = (props: Props) => {
     const { radius, center, minutes, hours, width, height } = props;
     const minutesArray = new Array(minutes).fill(1);
     const hoursArray = new Array(hours).fill(1);
@@ -43,4 +43,4 @@ const Events = (props: Props) => {
     );
 };
 
-export default Events;
+export default Face;
