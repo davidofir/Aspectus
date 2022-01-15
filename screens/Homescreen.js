@@ -3,20 +3,23 @@ import { Button, StyleSheet, Text, View, Alert, TouchableOpacity } from 'react-n
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { PieChart, LineChart } from 'react-native-chart-kit';
-
-let data = [];
-
-for(let i=0; i<24; i++) {
-    data.push({ name: i, hours: 1, color: `rgb(${i*10}, ${i*10}, ${i*10})`, legendFontColor: `rgb(${i*10}, ${i*10}, ${i*10})`, legendFontSize: 15 })
-}
+import { useWindowDimensions } from 'react-native';
 
 const Homescreen = ({ navigation }) => {
+    const windowWidth = useWindowDimensions().width;
+    const windowHeight = useWindowDimensions().height;
+
+    let data = [];
+
+    for(let i=0; i<24; i++) {
+        data.push({ name: i, hours: 1, color: `rgb(${i*10}, ${i*10}, ${i*10})`, legendFontColor: `rgb(${i*10}, ${i*10}, ${i*10})`, legendFontSize: 15 })
+    }
     return (
         <View style={styles.container}>
               
             <PieChart
                 data={data}
-                width={300}
+                width={windowWidth}
                 height={220}
                 chartConfig={{
                     backgroundColor: 'transparent',
