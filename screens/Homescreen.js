@@ -50,8 +50,8 @@ const Homescreen = ({ navigation }) => {
                 </TouchableOpacity>
             </Card>
             <Card>
+                <Text style={styles.label}>Upcoming</Text>
                 <View style={styles.week}>
-                    <Text style={styles.label}>This Week</Text>
                     <Card>
                         {/* Each day will have a card */}
                     </Card>
