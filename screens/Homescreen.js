@@ -49,22 +49,23 @@ const Homescreen = ({ navigation }) => {
                     <Text style={styles.eventText}>Linux Development from 09:00 to 11:00</Text>
                 </TouchableOpacity>
             </Card>
-
-            <View style={styles.week}>
-                <Text style={styles.label}>This Week</Text>
-                <Card>
-                    {/* Each day will have a card */}
-                </Card>
-                <Card>
-                    {/* Each day will have a card */}
-                </Card>
-                <Card>
-                    {/* Each day will have a card */}
-                </Card>
-                <Card>
-                    {/* Each day will have a card */}
-                </Card>
-            </View>
+            <Card>
+                <View style={styles.week}>
+                    <Text style={styles.label}>This Week</Text>
+                    <Card>
+                        {/* Each day will have a card */}
+                    </Card>
+                    <Card>
+                        {/* Each day will have a card */}
+                    </Card>
+                    <Card>
+                        {/* Each day will have a card */}
+                    </Card>
+                    <Card>
+                        {/* Each day will have a card */}
+                    </Card>
+                </View>
+            </Card>
         </View>
     )
 }
