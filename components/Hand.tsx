@@ -1,6 +1,5 @@
-// From https://www.lahteenlahti.com/creating-a-clock-face-in-react-native-with-svg/
+// From Perttu (plahteenlahti on GitHub) https://www.lahteenlahti.com/creating-a-clock-face-in-react-native-with-svg/
 
-// Hand.tsx
 import React from "react";
 import { Line } from "react-native-svg";
 import { polarToCartesian } from "../helpers/geometry";

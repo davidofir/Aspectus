@@ -1,5 +1,5 @@
-// ClockMarkings.tsx
-// From https://www.lahteenlahti.com/creating-a-clock-face-in-react-native-with-svg/
+// From Perttu (plahteenlahti on GitHub) https://www.lahteenlahti.com/creating-a-clock-face-in-react-native-with-svg/
+
 import React from "react";
 import { G, Line, Text } from "react-native-svg";
 import { polarToCartesian } from "../helpers/geometry";

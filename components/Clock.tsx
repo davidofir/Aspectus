@@ -1,4 +1,4 @@
-// From https://www.lahteenlahti.com/creating-a-clock-face-in-react-native-with-svg/
+// From Perttu (plahteenlahti on GitHub) https://www.lahteenlahti.com/creating-a-clock-face-in-react-native-with-svg/
 
 import React, { useState } from "react";
 import Svg from "react-native-svg";
