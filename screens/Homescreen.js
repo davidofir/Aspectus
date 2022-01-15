@@ -16,7 +16,7 @@ const Homescreen = ({ navigation }) => {
     let data = [];
 
     for(let i=0; i<24; i++) {
-        data.push({ name: i, hours: 1, color: `rgb(${i*10}, ${i*10}, ${i*10})`})
+        data.push({ name: i, hours: 1, color: `rgba(${(i%2+15)*10}, ${(i%3+0)*1}, ${(i%3+5)*1}, 1)`})
     }
     return (
         <View style={styles.container}>
