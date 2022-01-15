@@ -21,20 +21,38 @@ const Events = (props: Props) => {
             <Circle
                 cx={width/2}
                 cy={height/2}
-                r={width/2.5}
-                fill={"purple"}
+                r={width/3}
+                fill={"#5e1158"}
             />
+
             <Circle
                 cx={width/2}
                 cy={height/2}
-                r={width/2.5}
-                fill={"yellow"}
+                r={width/2.9}
+                stroke="#ffb400"
+                fill="transparent"
+                strokeWidth="50"
+                strokeDasharray={340}
+                strokeDashoffset={400}
+                rotation={260}
+                originX={width/2}
+                originY={height/2}
+                strokeLinecap="butt"
             />
+
             <Circle
                 cx={width/2}
                 cy={height/2}
-                r={width/3.2}
-                fill={"white"}
+                r={width/3.5}
+                stroke="#222831"
+                fill="transparent"
+                strokeWidth="30"
+                strokeDasharray={50}
+                strokeDashoffset={0}
+                rotation={0}
+                originX={width/2}
+                originY={height/2}
+                strokeLinecap="butt"
             />
         </G>
     );

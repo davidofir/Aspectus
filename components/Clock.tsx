@@ -51,15 +51,33 @@ const Clock = () => {
         angle={time.minutes}
         center={center}
         radius={radius}
-        stroke='black'
-        strokeWidth='5'
+        stroke='red'
+        strokeWidth={5}
       />
       <Hand
         angle={time.hours}
         center={center}
         radius={radius/1.5}
-        stroke='black'
-        strokeWidth='7'
+        stroke='red'
+        strokeWidth={7}
+      />
+      <Circle
+          cx={width/2}
+          cy={width/2}
+          r={width/50}
+          fill={"black"}
+      />
+      <Circle
+          cx={width/2}
+          cy={width/2}
+          r={width/60}
+          fill={"white"}
+      />
+      <Circle
+          cx={width/2}
+          cy={width/2}
+          r={width/80}
+          fill={"black"}
       />
     </Svg>
   );

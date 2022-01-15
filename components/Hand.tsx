@@ -1,14 +1,14 @@
 // From Perttu (plahteenlahti on GitHub) https://www.lahteenlahti.com/creating-a-clock-face-in-react-native-with-svg/
 
 import React from "react";
-import { Line } from "react-native-svg";
 import { polarToCartesian } from "../helpers/geometry";
+import { G, Line, Text } from "react-native-svg";
 
 type Props = {
   center: number;
   radius: number;
   angle: number;
-  strokeWidth: string;
+  strokeWidth: number;
   stroke: string;
 };
 
@@ -17,15 +17,26 @@ const Hand = (props: Props) => {
   const { x, y } = polarToCartesian(center, center, radius/1.2, angle);
 
   return (
-    <Line
-      x1={center}
-      y1={center}
-      x2={x}
-      y2={y}
-      strokeWidth={strokeWidth}
-      strokeLinecap='round'
-      stroke={stroke}
-    />
+    <G>
+      <Line
+        x1={center}
+        y1={center}
+        x2={x}
+        y2={y}
+        strokeWidth={strokeWidth}
+        strokeLinecap='round'
+        stroke={stroke}
+      />
+      <Line
+        x1={center}
+        y1={center}
+        x2={x}
+        y2={y}
+        strokeWidth={strokeWidth/3}
+        strokeLinecap='round'
+        stroke={"white"}
+      />
+    </G>
   );
 };
 
