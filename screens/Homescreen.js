@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { PieChart, LineChart } from 'react-native-chart-kit';
 import { useWindowDimensions } from 'react-native';
 import { Card } from 'react-native-elements';
+import Clock from '../components/Clock';
 
 const Homescreen = ({ navigation }) => {
     const windowWidth = useWindowDimensions().width;
@@ -18,6 +19,8 @@ const Homescreen = ({ navigation }) => {
     }
     return (
         <View style={styles.container}>
+            
+            <Clock/>
             <PieChart
                 data={data}
                 width={maxElementWidth}
