@@ -15,7 +15,7 @@ import { PieChart, LineChart } from 'react-native-chart-kit';
 let data = [];
 
 for(let i=0; i<24; i++) {
-    data.push({ name: i, hours: 1, color: `rgb(0, ${i*10}, 255)`, legendFontColor: '#7F7F7F', legendFontSize: 15 })
+    data.push({ name: i, hours: 1, color: `rgb(${i*10}, ${i*10}, ${i*10})`, legendFontColor: `rgb(${i*10}, ${i*10}, ${i*10})`, legendFontSize: 15 })
 }
 
 // const data = [
