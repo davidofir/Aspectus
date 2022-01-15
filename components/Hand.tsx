@@ -14,7 +14,7 @@ type Props = {
 
 const Hand = (props: Props) => {
   const { center, radius, angle, stroke, strokeWidth } = props;
-  const { x, y } = polarToCartesian(center, center, radius, angle);
+  const { x, y } = polarToCartesian(center, center, radius/1.2, angle);
 
   return (
     <Line

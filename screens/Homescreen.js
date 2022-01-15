@@ -16,12 +16,12 @@ const Homescreen = ({ navigation }) => {
     let data = [];
 
     for(let i=0; i<24; i++) {
-        data.push({ name: i, hours: 1, color: `rgba(${(i%2+15)*10}, ${(i%3+0)*1}, ${(i%3+5)*1}, 1)`})
+        data.push({ name: i, hours: 1, color: `rgba(${(i%2+15)*10}, ${(i%3+0)*1}, ${(i%3+5)*1}, 0.5)`})
     }
     return (
         <View style={styles.container}>
             <Clock/>
-            <View style={styles.clock}>
+            {/* <View style={styles.clock}>
                 <PieChart
                     data={data}
                     width={maxElementWidth}
@@ -40,7 +40,7 @@ const Homescreen = ({ navigation }) => {
                     hasLegend={false}
                     center={[50,0,0]}
                 />
-            </View>
+            </View> */}
             
             <Card>
                 <Text style={styles.label}>Today</Text>

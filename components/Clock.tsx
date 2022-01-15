@@ -1,12 +1,13 @@
 // From Perttu (plahteenlahti on GitHub) https://www.lahteenlahti.com/creating-a-clock-face-in-react-native-with-svg/
 
 import React, { useState } from "react";
-import Svg from "react-native-svg";
+import Svg, { Circle } from "react-native-svg";
 import { Dimensions } from "react-native";
 import Markings from "./Markings";
 import Hand from "./Hand";
 import { useInterval } from "../helpers/useInterval";
 import { getTime } from "../helpers/time";
+import Events from "./Events";
 
 const { width } = Dimensions.get("window");
 const diameter = width - 40;
@@ -24,6 +25,15 @@ const Clock = () => {
 
   return (
     <Svg height={width} width={width}>
+      <Events
+        minutes={minuteStickCount}
+        hours={hourStickCount}
+        radius={radius}
+        center={center}
+        width={width}
+        height={width}
+      />
+
       <Markings
         minutes={minuteStickCount}
         hours={hourStickCount}
@@ -47,7 +57,7 @@ const Clock = () => {
       <Hand
         angle={time.hours}
         center={center}
-        radius={radius}
+        radius={radius/1.5}
         stroke='black'
         strokeWidth='7'
       />
