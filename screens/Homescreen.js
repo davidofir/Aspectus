@@ -18,28 +18,25 @@ const Homescreen = ({ navigation }) => {
     }
     return (
         <View style={styles.container}>
-            <Card>
-                <PieChart
-                    data={data}
-                    width={maxElementWidth}
-                    height={220}
-                    chartConfig={{
-                        backgroundColor: 'none',
-                        // backgroundGradientFrom: '#fb8c00',
-                        // backgroundGradientTo: '#ffa726',
-                        // decimalPlaces: 2, // optional, defaults to 2dp
-                        color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-                        style: {
-                            borderRadius: 16
-                        }
-                    }}
-                    accessor="hours"
-                    backgroundColor="transparent"
-                    paddingLeft="15"
-                    hasLegend= {false}
-                />
-            </Card>
-
+            <PieChart
+                data={data}
+                width={maxElementWidth}
+                height={300}
+                chartConfig={{
+                    backgroundColor: 'none',
+                    color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+                    style: {
+                        borderRadius: 16
+                    }
+                }}
+                accessor="hours"
+                backgroundColor="transparent"
+                paddingLeft="15"
+                absolute={true}
+                hasLegend={false}
+                center={[50,0,0]}
+            />
+            
             <Card>
                 <Text style={styles.label}>Today</Text>
                 <TouchableOpacity onPress={() => alert('Hello, world!')} style={styles.eventButton}>
@@ -48,6 +45,22 @@ const Homescreen = ({ navigation }) => {
                 <TouchableOpacity onPress={() => alert('Hello, world!')} style={styles.eventButton}>
                     <Text style={styles.eventText}>Linux Development from 09:00 to 11:00</Text>
                 </TouchableOpacity>
+            </Card>
+
+            <Card>
+                <Text style={styles.label}>This Week</Text>
+                <Card>
+                    {/* Each day will have a card */}
+                </Card>
+                <Card>
+                    {/* Each day will have a card */}
+                </Card>
+                <Card>
+                    {/* Each day will have a card */}
+                </Card>
+                <Card>
+                    {/* Each day will have a card */}
+                </Card>
             </Card>
         </View>
     )
