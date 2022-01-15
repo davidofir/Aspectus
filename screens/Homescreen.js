@@ -50,7 +50,7 @@ const Homescreen = ({ navigation }) => {
                 </TouchableOpacity>
             </Card>
 
-            <Card>
+            <View style={styles.week}>
                 <Text style={styles.label}>This Week</Text>
                 <Card>
                     {/* Each day will have a card */}
@@ -64,7 +64,7 @@ const Homescreen = ({ navigation }) => {
                 <Card>
                     {/* Each day will have a card */}
                 </Card>
-            </Card>
+            </View>
         </View>
     )
 }
@@ -81,6 +81,10 @@ const styles = StyleSheet.create({
 
     label: {
         color: 'lightgray'
+    },
+
+    week: {
+        flexDirection: 'row'
     }
 });
 export default Homescreen;
