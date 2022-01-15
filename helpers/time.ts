@@ -15,7 +15,7 @@ type TimeObject = {
 
 export const getTime = (): TimeObject => {
   const date = new Date();
-  const hours = (to12hClock(date.getHours()) / 24) * 360;
+  const hours = (date.getHours() / 24) * 360;
   const minutes = (date.getMinutes() / 60) * 360;
   const seconds = (date.getSeconds() / 60) * 360;
   return { hours, minutes, seconds };
