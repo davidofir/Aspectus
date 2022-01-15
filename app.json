@@ -17,9 +17,16 @@
       "**/*"
     ],
     "ios": {
+      "infoPlist": {
+        "NSRemindersUsageDescription": "Calendar app requires calendar integration"
+      },
       "supportsTablet": true
     },
     "android": {
+      "permissions": {
+        "READ_CALENDAR": true,
+        "WRITE_CALENDAR": true
+      },
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"

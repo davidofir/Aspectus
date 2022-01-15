@@ -3,13 +3,16 @@ import { Button, StyleSheet, Text, View, Alert, TouchableOpacity } from 'react-n
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-const Homescreen = ({ navigation }) => {
-    return (
-        <View style={styles.container}>
-            <Text>Home</Text>
-        </View>
+export const Homescreen = ({ navigation }) => {
+    return ( 
+        <View style = { styles.container } >
+        <Text> Home </Text> 
+        </View >
     )
 }
+
+
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
