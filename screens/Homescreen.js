@@ -50,21 +50,22 @@ const Homescreen = ({ navigation }) => {
                     <Text style={styles.eventText}>Linux Development from 09:00 to 11:00</Text>
                 </TouchableOpacity>
             </Card>
-
             <Card>
-                <Text style={styles.label}>This Week</Text>
-                <Card>
-                    {/* Each day will have a card */}
-                </Card>
-                <Card>
-                    {/* Each day will have a card */}
-                </Card>
-                <Card>
-                    {/* Each day will have a card */}
-                </Card>
-                <Card>
-                    {/* Each day will have a card */}
-                </Card>
+                <Text style={styles.label}>Upcoming</Text>
+                <View style={styles.week}>
+                    <Card>
+                        {/* Each day will have a card */}
+                    </Card>
+                    <Card>
+                        {/* Each day will have a card */}
+                    </Card>
+                    <Card>
+                        {/* Each day will have a card */}
+                    </Card>
+                    <Card>
+                        {/* Each day will have a card */}
+                    </Card>
+                </View>
             </Card>
         </View>
     )
@@ -82,6 +83,10 @@ const styles = StyleSheet.create({
 
     label: {
         color: 'lightgray'
+    },
+
+    week: {
+        flexDirection: 'row'
     }
 });
 export default Homescreen;
