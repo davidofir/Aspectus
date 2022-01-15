@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { PieChart, LineChart } from 'react-native-chart-kit';
 import { useWindowDimensions } from 'react-native';
 import { Card } from 'react-native-elements';
+import CalendarClass from '../utils/CalendarClass';
 import Clock from '../components/Clock';
 
 const Homescreen = ({ navigation }) => {
@@ -49,21 +50,22 @@ const Homescreen = ({ navigation }) => {
                     <Text style={styles.eventText}>Linux Development from 09:00 to 11:00</Text>
                 </TouchableOpacity>
             </Card>
-
             <Card>
-                <Text style={styles.label}>This Week</Text>
-                <Card>
-                    {/* Each day will have a card */}
-                </Card>
-                <Card>
-                    {/* Each day will have a card */}
-                </Card>
-                <Card>
-                    {/* Each day will have a card */}
-                </Card>
-                <Card>
-                    {/* Each day will have a card */}
-                </Card>
+                <Text style={styles.label}>Upcoming</Text>
+                <View style={styles.week}>
+                    <Card>
+                        {/* Each day will have a card */}
+                    </Card>
+                    <Card>
+                        {/* Each day will have a card */}
+                    </Card>
+                    <Card>
+                        {/* Each day will have a card */}
+                    </Card>
+                    <Card>
+                        {/* Each day will have a card */}
+                    </Card>
+                </View>
             </Card>
         </View>
     )
@@ -81,6 +83,10 @@ const styles = StyleSheet.create({
 
     label: {
         color: 'lightgray'
+    },
+
+    week: {
+        flexDirection: 'row'
     }
 });
 export default Homescreen;
