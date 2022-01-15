@@ -21,7 +21,7 @@ const Markings = (props: Props) => {
     const end = polarToCartesian(center, center, radius, index * 5);
     return (
       <Line
-        stroke='white'
+        stroke='black'
         strokeWidth={2}
         strokeLinecap='round'
         key={index}
@@ -41,7 +41,7 @@ const Markings = (props: Props) => {
     return (
       <G key={index}>
         <Line
-          stroke='white'
+          stroke='black'
           strokeWidth={3}
           strokeLinecap='round'
           x1={start.x}
@@ -53,11 +53,11 @@ const Markings = (props: Props) => {
           textAnchor='middle'
           fontSize='17'
           fontWeight='bold'
-          fill='white'
+          fill='black'
           alignmentBaseline='central'
           x={time.x}
           y={time.y}>
-          {index === 0 ? 12 : index}
+          {index === 0 ? 24 : index}
         </Text>
       </G>
     );

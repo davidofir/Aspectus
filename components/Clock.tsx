@@ -12,8 +12,8 @@ const { width } = Dimensions.get("window");
 const diameter = width - 40;
 const center = width / 2;
 const radius = diameter / 2;
-const hourStickCount = 12;
-const minuteStickCount = 12 * 6;
+const hourStickCount = 24;
+const minuteStickCount = 24 * 6;
 
 const Clock = () => {
   let [time, setTime] = useState(getTime);
@@ -41,14 +41,14 @@ const Clock = () => {
         angle={time.minutes}
         center={center}
         radius={radius}
-        stroke='white'
+        stroke='black'
         strokeWidth='5'
       />
       <Hand
         angle={time.hours}
         center={center}
         radius={radius}
-        stroke='white'
+        stroke='black'
         strokeWidth='7'
       />
     </Svg>

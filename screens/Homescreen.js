@@ -21,7 +21,7 @@ const Homescreen = ({ navigation }) => {
         <View style={styles.container}>
             
             <Clock/>
-            <PieChart
+            {/* <PieChart
                 data={data}
                 width={maxElementWidth}
                 height={300}
@@ -38,7 +38,7 @@ const Homescreen = ({ navigation }) => {
                 absolute={true}
                 hasLegend={false}
                 center={[50,0,0]}
-            />
+            /> */}
             
             <Card>
                 <Text style={styles.label}>Today</Text>
