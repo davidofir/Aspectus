@@ -5,7 +5,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { PieChart, LineChart } from 'react-native-chart-kit';
 import { useWindowDimensions } from 'react-native';
 import { Card } from 'react-native-elements';
-import CalendarClass from '../utils/CalendarClass';
 import Clock from '../components/Clock';
 
 const Homescreen = ({ navigation }) => {

@@ -5,7 +5,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Homescreen from './screens/Homescreen';
 import * as Calendar from 'expo-calendar';
-import CalendarClass from './utils/CalendarClass';
 
 
 import AddEvent from './screens/AddEvent';
@@ -13,7 +12,27 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Icon } from 'react-native-elements/dist/icons/Icon';
 import Settings from './screens/Settings';
 const Stack = createStackNavigator();
+var defaultCalendarID = ""
 export default function App() {
+  useEffect(() => {
+    (async () => {
+      const { status } = await Calendar.requestCalendarPermissionsAsync();
+      if (status === 'granted') {
+        const calendars = await Calendar.getCalendarsAsync(Calendar.EntityTypes.EVENT);
+        console.log('Here are all your calendars:');
+        console.log({ calendars });
+        for (var i = 0; i < calendars.length; i++) {
+          if (calendars[i].title == 'Calendar') {
+            global.defaultCalendarID = calendars[i].id;
+            console.log(global.defaultCalendarID);
+            console.log("hello")
+            break;
+          }
+        }
+      }
+    })();
+  }, []);
+  
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Home'>
@@ -44,6 +63,7 @@ export default function App() {
 
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
