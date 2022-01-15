@@ -14,7 +14,7 @@ const Homescreen = ({ navigation }) => {
     let data = [];
 
     for(let i=0; i<24; i++) {
-        data.push({ name: i, hours: 1, color: `rgb(${i*10}, ${i*10}, ${i*10})`, legendFontColor: `rgb(${i*10}, ${i*10}, ${i*10})`, legendFontSize: 15 })
+        data.push({ name: i, hours: 1, color: `rgb(${i*10}, ${i*10}, ${i*10})`})
     }
     return (
         <View style={styles.container}>
@@ -24,7 +24,7 @@ const Homescreen = ({ navigation }) => {
                     width={maxElementWidth}
                     height={220}
                     chartConfig={{
-                        backgroundColor: 'transparent',
+                        backgroundColor: 'none',
                         // backgroundGradientFrom: '#fb8c00',
                         // backgroundGradientTo: '#ffa726',
                         // decimalPlaces: 2, // optional, defaults to 2dp
@@ -32,10 +32,11 @@ const Homescreen = ({ navigation }) => {
                         style: {
                             borderRadius: 16
                         }
-                        }}
+                    }}
                     accessor="hours"
                     backgroundColor="transparent"
                     paddingLeft="15"
+                    hasLegend= {false}
                 />
             </Card>
 
