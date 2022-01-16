@@ -23,7 +23,7 @@ const Markings = (props: Props) => {
     const start = polarToCartesian(center, center, radius, index * 5);
     const end = polarToCartesian(center, center, radius, index * 5);
     return (
-      <G>
+      <G key={index}>
         <Circle
             cx={width/2}
             cy={height/2}
