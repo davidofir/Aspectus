@@ -45,7 +45,7 @@ const Face = (props: Props) => {
                 cx={width/2}
                 cy={height/2}
                 r={radius/1.6}
-                fill={"darkgray"}
+                fill={"seagreen"}
             />
 
             <Text
