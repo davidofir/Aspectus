@@ -6,12 +6,22 @@ import { PieChart, LineChart } from 'react-native-chart-kit';
 import { useWindowDimensions } from 'react-native';
 import { Card } from 'react-native-elements';
 import Clock from '../components/Clock';
+import { CalendarAccessLevel, createEventAsync, getEventsAsync } from 'expo-calendar';
 
 const Homescreen = ({ navigation }) => {
     const windowWidth = useWindowDimensions().width;
     const windowHeight = useWindowDimensions().height;
     const maxElementWidth = windowWidth / 1.2;
 
+    //function to create event
+    createEventAsync(global.defaultCalendarID, {
+        title: 'wow',
+        startDate: new Date(),
+        endDate: new Date().setHours(20)})
+
+    //figure this out
+    var todaysEvents = getEventsAsync([global.defaultCalendarID],new Date().setHours(5), new Date().setHours(23));
+    console.log(todaysEvents);
     let data = [];
 
     for(let i=0; i<24; i++) {
