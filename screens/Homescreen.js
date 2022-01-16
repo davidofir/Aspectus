@@ -5,8 +5,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { PieChart, LineChart } from 'react-native-chart-kit';
 import { useWindowDimensions } from 'react-native';
 import { Card } from 'react-native-elements';
-import CalendarClass from '../utils/CalendarClass';
 import Clock from '../components/Clock';
+import { Overlay } from 'react-native-elements/dist/overlay/Overlay';
 
 const Homescreen = ({ navigation }) => {
     const windowWidth = useWindowDimensions().width;
@@ -16,30 +16,31 @@ const Homescreen = ({ navigation }) => {
     let data = [];
 
     for(let i=0; i<24; i++) {
-        data.push({ name: i, hours: 1, color: `rgb(${i*10}, ${i*10}, ${i*10})`})
+        data.push({ name: i, hours: 1, color: `rgba(${(i%2+15)*10}, ${(i%3+0)*1}, ${(i%3+5)*1}, 0.5)`})
     }
     return (
         <View style={styles.container}>
-            
             <Clock/>
-            {/* <PieChart
-                data={data}
-                width={maxElementWidth}
-                height={300}
-                chartConfig={{
-                    backgroundColor: 'none',
-                    color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-                    style: {
-                        borderRadius: 16
-                    }
-                }}
-                accessor="hours"
-                backgroundColor="transparent"
-                paddingLeft="15"
-                absolute={true}
-                hasLegend={false}
-                center={[50,0,0]}
-            /> */}
+            {/* <View style={styles.clock}>
+                <PieChart
+                    data={data}
+                    width={maxElementWidth}
+                    height={300}
+                    chartConfig={{
+                        backgroundColor: 'none',
+                        color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+                        style: {
+                            borderRadius: 16
+                        }
+                    }}
+                    accessor="hours"
+                    backgroundColor="transparent"
+                    paddingLeft="15"
+                    absolute={true}
+                    hasLegend={false}
+                    center={[50,0,0]}
+                />
+            </View> */}
             
             <Card>
                 <Text style={styles.label}>Today</Text>
@@ -87,6 +88,16 @@ const styles = StyleSheet.create({
 
     week: {
         flexDirection: 'row'
+    },
+
+    clock: {
+        position: 'absolute',
+    left: 30,
+    right: 0,
+    top: 0,
+    bottom: 210,
+    alignItems: 'center',
+    justifyContent: 'center'
     }
 });
 export default Homescreen;

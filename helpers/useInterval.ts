@@ -1,6 +1,5 @@
-// From https://www.lahteenlahti.com/creating-a-clock-face-in-react-native-with-svg/
+// From Perttu (plahteenlahti on GitHub) https://www.lahteenlahti.com/creating-a-clock-face-in-react-native-with-svg/
 
-// useInterval.ts
 import React, { useState, useEffect, useRef } from "react";
 
 // From Dan Abramov https://overreacted.io/making-setinterval-declarative-with-react-hooks/
