@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import * as Calendar from "expo-calendar"
 import { TextInput } from 'react-native-gesture-handler';
 import DatepickerComponent from '../components/DatepickerComponent';
+import { color } from 'react-native-elements/dist/helpers';
 const AddEvent = ({ navigation }) => {
     const today = new Date(Date.now())
     const [eventIdInCalendar, setEventIdInCalendar] = useState("")
@@ -66,13 +67,13 @@ const styles = StyleSheet.create({
     buttonAlign: { flex: 1, alignItems: "center", justifyContent: "center", marginVertical: 16 },
     textbox:{
         marginHorizontal: 5,
-        backgroundColor: "#669BBC",
+        backgroundColor: "#B9E6FF",
         margin: 20,
         borderColor: "black",
         borderWidth: 3,
         color: "black",
         padding: 7,
         
-    }
+    },
 });
 export default AddEvent;
