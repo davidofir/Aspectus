@@ -1,13 +1,9 @@
 import React from 'react'
 import { Button, StyleSheet, Text, View, Alert, TouchableOpacity } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { PieChart, LineChart } from 'react-native-chart-kit';
 import { useWindowDimensions } from 'react-native';
 import { Card } from 'react-native-elements';
 import Clock from '../components/Clock';
 import { CalendarAccessLevel, createEventAsync, getEventsAsync } from 'expo-calendar';
-import { Overlay } from 'react-native-elements/dist/overlay/Overlay';
 
 const Homescreen = ({ navigation }) => {
     const windowWidth = useWindowDimensions().width;
@@ -31,26 +27,6 @@ const Homescreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <Clock/>
-            {/* <View style={styles.clock}>
-                <PieChart
-                    data={data}
-                    width={maxElementWidth}
-                    height={300}
-                    chartConfig={{
-                        backgroundColor: 'none',
-                        color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-                        style: {
-                            borderRadius: 16
-                        }
-                    }}
-                    accessor="hours"
-                    backgroundColor="transparent"
-                    paddingLeft="15"
-                    absolute={true}
-                    hasLegend={false}
-                    center={[50,0,0]}
-                />
-            </View> */}
             
             <Card>
                 <Text style={styles.label}>Today</Text>
