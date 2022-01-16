@@ -14,7 +14,7 @@ const AddEvent = ({ navigation }) => {
     const [endDate, setEndDate] = useState(today);
     const addEventToCalendar = async () => {
         try {
-            const eventId = await Calendar.createEventAsync(1, {
+            const eventId = await Calendar.createEventAsync("1", {
                 title: eventTitle,
                 startDate: startDate,
                 endDate: endDate,
@@ -22,23 +22,14 @@ const AddEvent = ({ navigation }) => {
             })
             //Calendar.openEventInCalendar(eventIdInCalendar)// that will give the user the ability to access the event in phone calendar 
             setEventIdInCalendar(eventId)
-
         }
         catch (e) {
             console.log({ e })
         }
     }
-
     useEffect(() => {
-        (async () => {
-            const { status } = await Calendar.requestCalendarPermissionsAsync();
-            if (status === 'granted') {
-                const calendars = await Calendar.getCalendarsAsync(Calendar.EntityTypes.EVENT);
-                console.log('Here are all your calendars:');
-                console.log({ calendars });
-            }
-        })();
-    }, []);
+        console.log(Calendar)
+    }, [])
     return (
         <View style={styles.container}>
             <TextInput placeholder='Event Title' style={{ marginHorizontal: 16 }} onChangeText={setEventTitle} />

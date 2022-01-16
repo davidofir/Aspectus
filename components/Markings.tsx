@@ -23,19 +23,34 @@ const Markings = (props: Props) => {
     const start = polarToCartesian(center, center, radius, index * 5);
     const end = polarToCartesian(center, center, radius, index * 5);
     return (
+<<<<<<< HEAD
       <Circle
         key={index}
           cx={width/2}
           cy={height/2}
+=======
+      <G>
+        <Circle
+          cx={width / 2}
+          cy={height / 2}
+>>>>>>> Backup
           r={radius}
           stroke="lightgray"
           fill="transparent"
           strokeWidth="30"
           rotation={0}
+<<<<<<< HEAD
           originX={width/2}
           originY={height/2}
           strokeLinecap="butt"
       />
+=======
+          originX={width / 2}
+          originY={height / 2}
+          strokeLinecap="butt"
+        />
+      </G>
+>>>>>>> Backup
     );
   });
 
