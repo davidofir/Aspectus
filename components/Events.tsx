@@ -72,9 +72,15 @@ const Events = (props: Props) => {
                 fill="white"
                 stroke="white"
                 fontSize="20"
+<<<<<<< HEAD
                 fontWeight="regular"
                 x={x - 30}
                 y={y - 215}
+=======
+                fontWeight="normal"
+                x={x-30}
+                y={y-215}
+>>>>>>> 0dfdd93c402a89dcc9f031f468eefbb3d1d01cde
                 textAnchor="middle"
                 rotation={34}
             >
