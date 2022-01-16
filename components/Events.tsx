@@ -16,24 +16,9 @@ const Events = (props: Props) => {
     const { radius, center, minutes, hours, width, height } = props;
     const minutesArray = new Array(minutes).fill(1);
     const hoursArray = new Array(hours).fill(1);
+    const { x, y } = polarToCartesian(center, center, radius/1.2, 50);
     return (
         <G>
-            {/* This part for events */}
-            {/* <Circle
-                cx={width/2}
-                cy={height/2}
-                r={width/2.3}
-                stroke="#222831"
-                fill="transparent"
-                strokeWidth="30"
-                strokeDasharray={530}
-                strokeDashoffset={0}
-                rotation={0}
-                originX={width/2}
-                originY={height/2}
-                strokeLinecap="butt"
-            /> */}
-
             {/* Sleep */}
             <Circle
                 cx={width/2}
@@ -82,6 +67,19 @@ const Events = (props: Props) => {
                 strokeLinecap="butt"
                 
             />
+
+            <Text
+                fill="white"
+                stroke="white"
+                fontSize="20"
+                fontWeight="regular"
+                x={x-30}
+                y={y-215}
+                textAnchor="middle"
+                rotation={34}
+            >
+                Sleep
+            </Text>
 
 
         </G>

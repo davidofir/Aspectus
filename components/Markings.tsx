@@ -19,34 +19,41 @@ const Markings = (props: Props) => {
   const minutesArray = new Array(minutes).fill(1);
   const hoursArray = new Array(hours).fill(1);
 
-  const minuteSticks = minutesArray.map((minute, index) => {
+  const outerCircle = minutesArray.map((minute, index) => {
     const start = polarToCartesian(center, center, radius, index * 5);
     const end = polarToCartesian(center, center, radius, index * 5);
     return (
-      <Circle
-          cx={width/2}
-          cy={height/2}
-          r={radius}
-          stroke="lightgray"
-          fill="transparent"
-          strokeWidth="30"
-          // strokeDasharray={50}
-          // strokeDashoffset={0}
-          rotation={0}
-          originX={width/2}
-          originY={height/2}
-          strokeLinecap="butt"
+      <G>
+        <Circle
+            cx={width/2}
+            cy={height/2}
+            r={radius}
+            stroke="lightgray"
+            fill="transparent"
+            strokeWidth="30"
+            rotation={0}
+            originX={width/2}
+            originY={height/2}
+            strokeLinecap="butt"
+        />
+      </G>
+    );
+  });
+
+  const minuteSticks = minutesArray.map((minute, index) => {
+    const start = polarToCartesian(center, center, radius, index * 3);
+    const end = polarToCartesian(center, center, radius, index * 3);
+    return (
+      <Line
+        stroke='black'
+        strokeWidth={2}
+        strokeLinecap='round'
+        key={index}
+        x1={start.x}
+        x2={end.x}
+        y1={start.y}
+        y2={end.y}
       />
-      // <Line
-      //   stroke='black'
-      //   strokeWidth={2}
-      //   strokeLinecap='round'
-      //   key={index}
-      //   x1={start.x}
-      //   x2={end.x}
-      //   y1={start.y}
-      //   y2={end.y}
-      // />
     );
   });
 
@@ -57,7 +64,7 @@ const Markings = (props: Props) => {
 
     return (
       <G key={index}>
-        {/* <Line
+        <Line
           stroke='black'
           strokeWidth={3}
           strokeLinecap='round'
@@ -65,7 +72,7 @@ const Markings = (props: Props) => {
           x2={end.x}
           y1={start.y}
           y2={end.y}
-        /> */}
+        />
         <Text
           textAnchor='middle'
           fontSize='17'
@@ -82,6 +89,7 @@ const Markings = (props: Props) => {
 
   return (
     <G>
+      {outerCircle}
       {minuteSticks}
       {hourSticks}
     </G>

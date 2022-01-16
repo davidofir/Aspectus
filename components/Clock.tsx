@@ -34,7 +34,6 @@ const Clock = () => {
         width={width}
         height={width}
       />
-
       <Markings
         minutes={minuteStickCount}
         hours={hourStickCount}
