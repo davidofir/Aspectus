@@ -28,7 +28,7 @@ const Homescreen = ({ navigation }) => {
         <View style={styles.container}>
             <Clock/>
             
-            <Card>
+            <Card style={styles.cards}>
                 <Text style={styles.label}>Today</Text>
                 <TouchableOpacity onPress={() => alert('Hello, world!')} style={styles.eventButton}>
                     <Text style={styles.eventText}>Intro to Java from 09:00 to 11:00</Text>
@@ -63,7 +63,8 @@ const Homescreen = ({ navigation }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        //backgroundColor: '#fff',
+        backgroundColor: '#EAC435',
         alignItems: 'center',
         justifyContent: "center",
     },
@@ -84,6 +85,13 @@ const styles = StyleSheet.create({
     bottom: 210,
     alignItems: 'center',
     justifyContent: 'center'
+    },
+
+    cards: {
+        backgroundColor: '#0D3B66',
+        color: "#fff"
     }
+
+
 });
 export default Homescreen;
