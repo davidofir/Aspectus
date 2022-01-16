@@ -37,15 +37,9 @@ const Homescreen = ({ navigation }) => {
     }, []);
     return (
         <View style={styles.container}>
-<<<<<<< HEAD
             <Clock />
 
-            <Card>
-=======
-            <Clock/>
-            
             <Card style={styles.cards}>
->>>>>>> 537612efd798728de91b6387f3d61ba498969f9e
                 <Text style={styles.label}>Today</Text>
                 <TouchableOpacity onPress={() => alert('Hello, world!')} style={styles.eventButton}>
                     <Text style={styles.eventText}>Intro to Java from 09:00 to 11:00</Text>
