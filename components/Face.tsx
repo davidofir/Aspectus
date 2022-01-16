@@ -52,13 +52,8 @@ const Face = (props: Props) => {
                 stroke="white"
                 fontSize="20"
                 fontWeight="normal"
-<<<<<<< HEAD
                 x={width / 2}
                 y={height / 2 - 60}
-=======
-                x={width/2}
-                y={height/2-60}
->>>>>>> 0dfdd93c402a89dcc9f031f468eefbb3d1d01cde
                 textAnchor="middle"
                 rotation={0}
             >
