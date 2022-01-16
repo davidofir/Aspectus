@@ -37,9 +37,15 @@ const Homescreen = ({ navigation }) => {
     }, []);
     return (
         <View style={styles.container}>
+<<<<<<< HEAD
             <Clock />
 
             <Card>
+=======
+            <Clock/>
+            
+            <Card style={styles.cards}>
+>>>>>>> 537612efd798728de91b6387f3d61ba498969f9e
                 <Text style={styles.label}>Today</Text>
                 <TouchableOpacity onPress={() => alert('Hello, world!')} style={styles.eventButton}>
                     <Text style={styles.eventText}>Intro to Java from 09:00 to 11:00</Text>
@@ -74,7 +80,8 @@ const Homescreen = ({ navigation }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        //backgroundColor: '#fff',
+        backgroundColor: '#EAC435',
         alignItems: 'center',
         justifyContent: "center",
     },
@@ -89,12 +96,28 @@ const styles = StyleSheet.create({
 
     clock: {
         position: 'absolute',
+<<<<<<< HEAD
         left: 30,
         right: 0,
         top: 0,
         bottom: 210,
         alignItems: 'center',
         justifyContent: 'center'
+=======
+    left: 30,
+    right: 0,
+    top: 0,
+    bottom: 210,
+    alignItems: 'center',
+    justifyContent: 'center'
+    },
+
+    cards: {
+        backgroundColor: '#0D3B66',
+        color: "#fff"
+>>>>>>> 537612efd798728de91b6387f3d61ba498969f9e
     }
+
+
 });
 export default Homescreen;
