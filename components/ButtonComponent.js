@@ -1,6 +1,6 @@
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import React from 'react';
-const buttonComponent = props => {
+const ButtonComponent = props => {
     return (
         <TouchableOpacity onPress={props.clickEvent} style={[styles.button, { backgroundColor: props.background, borderColor: props.borderColorStyle }]}>
             <Text style={{ color: props.textColor }}>{props.buttonTitle}</Text>
@@ -15,4 +15,4 @@ const styles = StyleSheet.create({
         borderWidth: 2,
     }
 });
-export default buttonComponent;
+export default ButtonComponent;

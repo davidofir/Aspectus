@@ -90,26 +90,17 @@ const styles = StyleSheet.create({
 
     clock: {
         position: 'absolute',
-<<<<<<< HEAD
         left: 30,
         right: 0,
         top: 0,
         bottom: 210,
         alignItems: 'center',
         justifyContent: 'center'
-=======
-    left: 30,
-    right: 0,
-    top: 0,
-    bottom: 210,
-    alignItems: 'center',
-    justifyContent: 'center'
     },
 
     cards: {
         backgroundColor: '#0D3B66',
         color: "#fff"
->>>>>>> 537612efd798728de91b6387f3d61ba498969f9e
     }
 
 
