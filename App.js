@@ -35,8 +35,8 @@ export default function App() {
   
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Home'>
-        <Stack.Screen name="Home" component={Homescreen} options={({ route, navigation }) => ({
+      <Stack.Navigator initialRouteName='Aspectus'>
+        <Stack.Screen name="Aspectus" component={Homescreen} options={({ route, navigation }) => ({
           headerRight: () => (
             <TouchableOpacity style={{ marginRight: 8 }} onPress={() => {
               navigation.navigate("AddEvent")
