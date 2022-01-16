@@ -59,27 +59,27 @@ const Clock = () => {
       <Hand
         angle={time.hours}
         center={center}
-        radius={radius/1.5}
+        radius={radius / 1.5}
         stroke='red'
         strokeWidth={7}
       />
       <Circle
-          cx={width/2}
-          cy={width/2}
-          r={width/50}
-          fill={"black"}
+        cx={width / 2}
+        cy={width / 2}
+        r={width / 50}
+        fill={"black"}
       />
       <Circle
-          cx={width/2}
-          cy={width/2}
-          r={width/60}
-          fill={"white"}
+        cx={width / 2}
+        cy={width / 2}
+        r={width / 60}
+        fill={"white"}
       />
       <Circle
-          cx={width/2}
-          cy={width/2}
-          r={width/80}
-          fill={"black"}
+        cx={width / 2}
+        cy={width / 2}
+        r={width / 80}
+        fill={"black"}
       />
       <Events
         minutes={minuteStickCount}

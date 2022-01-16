@@ -25,16 +25,16 @@ const Markings = (props: Props) => {
     return (
       <G>
         <Circle
-            cx={width/2}
-            cy={height/2}
-            r={radius}
-            stroke="lightgray"
-            fill="transparent"
-            strokeWidth="30"
-            rotation={0}
-            originX={width/2}
-            originY={height/2}
-            strokeLinecap="butt"
+          cx={width / 2}
+          cy={height / 2}
+          r={radius}
+          stroke="lightgray"
+          fill="transparent"
+          strokeWidth="30"
+          rotation={0}
+          originX={width / 2}
+          originY={height / 2}
+          strokeLinecap="butt"
         />
       </G>
     );
