@@ -23,20 +23,19 @@ const Markings = (props: Props) => {
     const start = polarToCartesian(center, center, radius, index * 5);
     const end = polarToCartesian(center, center, radius, index * 5);
     return (
-      <G key={index}>
-        <Circle
-            cx={width/2}
-            cy={height/2}
-            r={radius}
-            stroke="lightgray"
-            fill="transparent"
-            strokeWidth="30"
-            rotation={0}
-            originX={width/2}
-            originY={height/2}
-            strokeLinecap="butt"
-        />
-      </G>
+      <Circle
+        key={index}
+          cx={width/2}
+          cy={height/2}
+          r={radius}
+          stroke="lightgray"
+          fill="transparent"
+          strokeWidth="30"
+          rotation={0}
+          originX={width/2}
+          originY={height/2}
+          strokeLinecap="butt"
+      />
     );
   });
 
@@ -65,6 +64,7 @@ const Markings = (props: Props) => {
     return (
       <G key={index}>
         <Line
+          key={index}
           stroke='black'
           strokeWidth={3}
           strokeLinecap='round'
