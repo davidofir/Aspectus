@@ -14,25 +14,7 @@ import Settings from './screens/Settings';
 const Stack = createStackNavigator();
 var defaultCalendarID = ""
 export default function App() {
-  useEffect(() => {
-    (async () => {
-      const { status } = await Calendar.requestCalendarPermissionsAsync();
-      if (status === 'granted') {
-        const calendars = await Calendar.getCalendarsAsync(Calendar.EntityTypes.EVENT);
-        console.log('Here are all your calendars:');
-        console.log({ calendars });
-        for (var i = 0; i < calendars.length; i++) {
-          if (calendars[i].title == 'Calendar') {
-            global.defaultCalendarID = calendars[i].id;
-            console.log(global.defaultCalendarID);
-            console.log("hello")
-            break;
-          }
-        }
-      }
-    })();
-  }, []);
-  
+
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Aspectus'>

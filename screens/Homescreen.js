@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Button, StyleSheet, Text, View, Alert, TouchableOpacity } from 'react-native';
 import { useWindowDimensions } from 'react-native';
 import { Card } from 'react-native-elements';
@@ -14,20 +14,31 @@ const Homescreen = ({ navigation }) => {
     createEventAsync(global.defaultCalendarID, {
         title: 'wow',
         startDate: new Date(),
-        endDate: new Date().setHours(20)})
+        endDate: new Date().setHours(20)
+    })
 
     //figure this out
-    var todaysEvents = getEventsAsync([global.defaultCalendarID],new Date().setHours(5), new Date().setHours(23));
+    var todaysEvents = getEventsAsync([global.defaultCalendarID], new Date().setHours(5), new Date().setHours(23));
     console.log(todaysEvents);
     let data = [];
 
-    for(let i=0; i<24; i++) {
-        data.push({ name: i, hours: 1, color: `rgba(${(i%2+15)*10}, ${(i%3+0)*1}, ${(i%3+5)*1}, 0.5)`})
+    for (let i = 0; i < 24; i++) {
+        data.push({ name: i, hours: 1, color: `rgba(${(i % 2 + 15) * 10}, ${(i % 3 + 0) * 1}, ${(i % 3 + 5) * 1}, 0.5)` })
     }
+    useEffect(() => {
+        (async () => {
+            const { status } = await Calendar.requestCalendarPermissionsAsync();
+            if (status === 'granted') {
+                const calendars = await Calendar.getCalendarsAsync(Calendar.EntityTypes.EVENT);
+                console.log('Here are all your calendars:');
+                console.log({ calendars });
+            }
+        })();
+    }, []);
     return (
         <View style={styles.container}>
-            <Clock/>
-            
+            <Clock />
+
             <Card>
                 <Text style={styles.label}>Today</Text>
                 <TouchableOpacity onPress={() => alert('Hello, world!')} style={styles.eventButton}>
@@ -78,12 +89,12 @@ const styles = StyleSheet.create({
 
     clock: {
         position: 'absolute',
-    left: 30,
-    right: 0,
-    top: 0,
-    bottom: 210,
-    alignItems: 'center',
-    justifyContent: 'center'
+        left: 30,
+        right: 0,
+        top: 0,
+        bottom: 210,
+        alignItems: 'center',
+        justifyContent: 'center'
     }
 });
 export default Homescreen;

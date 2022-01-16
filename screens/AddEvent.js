@@ -28,8 +28,15 @@ const AddEvent = ({ navigation }) => {
         }
     }
     useEffect(() => {
-        console.log(Calendar)
-    }, [])
+        (async () => {
+            const { status } = await Calendar.requestCalendarPermissionsAsync();
+            if (status === 'granted') {
+                const calendars = await Calendar.getCalendarsAsync(Calendar.EntityTypes.EVENT);
+                console.log('Here are all your calendars:');
+                console.log({ calendars });
+            }
+        })();
+    }, []);
     return (
         <View style={styles.container}>
             <TextInput placeholder='Event Title' style={{ marginHorizontal: 16 }} onChangeText={setEventTitle} />
