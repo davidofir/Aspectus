@@ -72,7 +72,7 @@ const Events = (props: Props) => {
                 fill="white"
                 stroke="white"
                 fontSize="20"
-                fontWeight="regular"
+                fontWeight="normal"
                 x={x-30}
                 y={y-215}
                 textAnchor="middle"

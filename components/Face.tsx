@@ -52,7 +52,7 @@ const Face = (props: Props) => {
                 fill="white"
                 stroke="white"
                 fontSize="20"
-                fontWeight="regular"
+                fontWeight="normal"
                 x={width/2}
                 y={height/2-60}
                 textAnchor="middle"
